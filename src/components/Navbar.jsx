@@ -27,10 +27,10 @@ export default function Navbar() {
     <header className="fixed top-0 w-full z-50 bg-white/80 backdrop-blur-xl border-b shadow-sm">
       <nav className="max-w-7xl mx-auto flex items-center justify-between px-6 py-4">
 
-        {/* LEFT - LOGO */}
+        {/* LOGO */}
         <img src={logo} className="h-12 md:h-14 object-contain" />
 
-        {/* CENTER - NAV LINKS */}
+        {/* DESKTOP LINKS */}
         <div className="hidden lg:flex gap-7 text-[14px] font-medium text-gray-700">
           {links.map((l) => (
             <a
@@ -43,22 +43,22 @@ export default function Navbar() {
           ))}
         </div>
 
-        {/* RIGHT - SOCIAL ICONS ONLY */}
+        {/* SOCIAL ICONS */}
         <div className="hidden lg:flex items-center gap-4 text-xl text-gray-700">
-          <a href="https://github.com" target="_blank" className="hover:text-sky-600 transition">
+          <a href="https://github.com" target="_blank" rel="noopener noreferrer">
             <FaGithub />
           </a>
 
-          <a href="https://linkedin.com" target="_blank" className="hover:text-sky-600 transition">
+          <a href="https://linkedin.com" target="_blank" rel="noopener noreferrer">
             <FaLinkedin />
           </a>
 
-          <a href="https://instagram.com" target="_blank" className="hover:text-sky-600 transition">
+          <a href="https://www.instagram.com/mamata.adhk/" target="_blank" rel="noopener noreferrer">
             <FaInstagram />
           </a>
         </div>
 
-        {/* MOBILE MENU */}
+        {/* MOBILE MENU BUTTON */}
         <button
           className="lg:hidden text-2xl"
           onClick={() => setOpen(!open)}
@@ -81,11 +81,19 @@ export default function Navbar() {
             </a>
           ))}
 
-          {/* social mobile */}
+          {/* MOBILE SOCIAL */}
           <div className="flex gap-4 text-xl pt-3 text-gray-700">
-            <FaGithub />
-            <FaLinkedin />
-            <FaInstagram />
+            <a href="https://github.com" target="_blank" rel="noopener noreferrer">
+              <FaGithub />
+            </a>
+
+            <a href="https://linkedin.com" target="_blank" rel="noopener noreferrer">
+              <FaLinkedin />
+            </a>
+
+            <a href="https://www.instagram.com/mamata.adhk/" target="_blank" rel="noopener noreferrer">
+              <FaInstagram />
+            </a>
           </div>
         </div>
       )}

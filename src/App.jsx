@@ -8,12 +8,12 @@ import Projects from "./components/Projects";
 import Research from "./components/Research";
 import Contact from "./components/Contact";
 import Footer from "./components/Footer";
-import { motion } from "framer-motion";
 
 export default function App() {
   return (
-    <div className="bg-gradient-to-b from-white via-sky-50 to-white text-black scroll-smooth">
+    <div className="bg-gradient-to-b from-white via-sky-50 to-white text-black scroll-smooth min-h-screen">
       <Navbar />
+
       <Hero />
       <About />
       <Skills />
