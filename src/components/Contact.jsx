@@ -17,10 +17,17 @@ export default function Contact() {
     return err;
   };
 
-  const sendEmail = (e) => {
-    e.preventDefault();
+const sendEmail = (e) => {
+  e.preventDefault();
 
-    const formData = new FormData(form.current);
+  console.log("Service ID:", import.meta.env.VITE_EMAILJS_SERVICE_ID);
+  console.log("Template ID:", import.meta.env.VITE_EMAILJS_TEMPLATE_ID);
+  console.log("Auto Reply ID:", import.meta.env.VITE_EMAILJS_AUTOREPLY_ID);
+  console.log("Public Key:", import.meta.env.VITE_EMAILJS_PUBLIC_KEY);
+
+  const formData = new FormData(form.current);
+
+}
 
     const data = {
       from_name: formData.get("from_name"),
@@ -66,10 +73,18 @@ export default function Contact() {
         setTimeout(() => setSuccess(false), 4000);
       })
 
-      .catch(() => {
-        setLoading(false);
-        alert("Something went wrong. Try again.");
-      });
+.catch((error) => {
+  console.log("===== EMAILJS ERROR =====");
+  console.log("Status:", error.status);
+  console.log("Text:", error.text);
+  console.log("Full Error:", error);
+
+  setLoading(false);
+
+  alert(
+    `Status: ${error.status}\nMessage: ${error.text}`
+  );
+});
   };
 
   return (
